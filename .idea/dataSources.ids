@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="PostgreSQL - db_Salajev@dev.vk.edu.ee [2]" uuid="6aa266fb-6345-4e8a-9eef-f9973d11445a">
+    <database-info product="PostgreSQL" version="9.1.20" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.5">
+      <database id="1" name="db_Salajev"/>
+      <schema id="2" parent="1" name="architecture">
+        <object-id>159426</object-id>
+        <introspection-state-number>490989</introspection-state-number>
+        <introspection-timestamp>2016-05-19.13:59:44.777</introspection-timestamp>
+      </schema>
+      <sequence id="3" parent="2" name="attendances_id_seq">
+        <object-id>160198</object-id>
+        <state-number>490983</state-number>
+      </sequence>
+      <sequence id="4" parent="2" name="groups_id_seq">
+        <object-id>160106</object-id>
+        <state-number>490958</state-number>
+      </sequence>
+      <sequence id="5" parent="2" name="pivots_id_seq">
+        <object-id>160172</object-id>
+        <state-number>490975</state-number>
+      </sequence>
+      <sequence id="6" parent="2" name="roles_id_seq">
+        <object-id>160098</object-id>
+        <state-number>490956</state-number>
+      </sequence>
+      <sequence id="7" parent="2" name="students_id_seq">
+        <object-id>160143</object-id>
+        <state-number>490969</state-number>
+      </sequence>
+      <sequence id="8" parent="2" name="subjects_id_seq">
+        <object-id>160161</object-id>
+        <state-number>490973</state-number>
+      </sequence>
+      <sequence id="9" parent="2" name="users_id_seq">
+        <object-id>160116</object-id>
+        <state-number>490961</state-number>
+      </sequence>
+      <table id="10" parent="2" name="attendances">
+        <object-id>160200</object-id>
+        <state-number>490986</state-number>
+      </table>
+      <table id="11" parent="2" name="groups">
+        <object-id>160108</object-id>
+        <state-number>490978</state-number>
+      </table>
+      <table id="12" parent="2" name="migrations">
+        <object-id>159427</object-id>
+        <state-number>489643</state-number>
+      </table>
+      <table id="13" parent="2" name="password_resets">
+        <object-id>160135</object-id>
+        <state-number>490965</state-number>
+      </table>
+      <table id="14" parent="2" name="pivots">
+        <object-id>160174</object-id>
+        <state-number>490984</state-number>
+      </table>
+      <table id="15" parent="2" name="roles">
+        <object-id>160100</object-id>
+        <state-number>490962</state-number>
+      </table>
+      <table id="16" parent="2" name="students">
+        <object-id>160145</object-id>
+        <state-number>490985</state-number>
+      </table>
+      <table id="17" parent="2" name="subjects">
+        <object-id>160163</object-id>
+        <state-number>490986</state-number>
+      </table>
+      <table id="18" parent="2" name="users">
+        <object-id>160118</object-id>
+        <state-number>490976</state-number>
+      </table>
+      <column id="19" parent="10" name="id">
+        <state-number>490983</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;attendances_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="20" parent="10" name="pivot_id">
+        <state-number>490983</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="21" parent="10" name="student_id">
+        <state-number>490983</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="22" parent="10" name="subject_id">
+        <state-number>490983</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="23" parent="10" name="description">
+        <state-number>490983</state-number>
+        <data-type>text</data-type>
+      </column>
+      <column id="24" parent="10" name="is_was">
+        <state-number>490983</state-number>
+        <mandatory>1</mandatory>
+        <data-type>boolean</data-type>
+        <default-expression>false</default-expression>
+      </column>
+      <column id="25" parent="10" name="att_date">
+        <state-number>490983</state-number>
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="26" parent="10" name="created_at">
+        <state-number>490983</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <column id="27" parent="10" name="updated_at">
+        <state-number>490983</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <index id="28" parent="10" name="attendances_pkey">
+        <object-id>160208</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="29" parent="10" name="attendances_att_date_pivot_id_student_id_unique">
+        <object-id>160225</object-id>
+        <columns>att_date
+pivot_id
+student_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="30" parent="10" name="attendances_att_date_pivot_id_student_id_index">
+        <object-id>160227</object-id>
+        <columns>att_date
+pivot_id
+student_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="31" parent="10" name="attendances_att_date_index">
+        <object-id>160228</object-id>
+        <columns>att_date</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="32" parent="10" name="attendances_pkey">
+        <columns>id</columns>
+        <underlying-index>attendances_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <key id="33" parent="10" name="attendances_att_date_pivot_id_student_id_unique">
+        <columns>att_date
+pivot_id
+student_id</columns>
+        <underlying-index>attendances_att_date_pivot_id_student_id_unique</underlying-index>
+      </key>
+      <foreign-key id="34" parent="10" name="attendances_pivot_id_foreign">
+        <columns>pivot_id</columns>
+        <ref-key>~.pivots.pivots_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="35" parent="10" name="attendances_student_id_foreign">
+        <columns>student_id</columns>
+        <ref-key>~.students.students_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="36" parent="10" name="attendances_subject_id_foreign">
+        <columns>subject_id</columns>
+        <ref-key>~.subjects.subjects_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="37" parent="11" name="id">
+        <state-number>490958</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;groups_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="38" parent="11" name="code">
+        <state-number>490958</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="39" parent="11" name="created_at">
+        <state-number>490958</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <column id="40" parent="11" name="updated_at">
+        <state-number>490958</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <index id="41" parent="11" name="groups_pkey">
+        <object-id>160112</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="42" parent="11" name="groups_code_unique">
+        <object-id>160114</object-id>
+        <columns>code</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="43" parent="11" name="groups_pkey">
+        <columns>id</columns>
+        <underlying-index>groups_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <key id="44" parent="11" name="groups_code_unique">
+        <columns>code</columns>
+        <underlying-index>groups_code_unique</underlying-index>
+      </key>
+      <column id="45" parent="12" name="migration">
+        <state-number>489643</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="46" parent="12" name="batch">
+        <state-number>489643</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="47" parent="13" name="email">
+        <state-number>490965</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="48" parent="13" name="token">
+        <state-number>490965</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="49" parent="13" name="created_at">
+        <state-number>490965</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <index id="50" parent="13" name="password_resets_email_index">
+        <object-id>160141</object-id>
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="51" parent="13" name="password_resets_token_index">
+        <object-id>160142</object-id>
+        <columns>token</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="52" parent="14" name="id">
+        <state-number>490975</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;pivots_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="53" parent="14" name="user_id">
+        <state-number>490975</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="54" parent="14" name="subject_id">
+        <state-number>490975</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="55" parent="14" name="group_id">
+        <state-number>490975</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="56" parent="14" name="created_at">
+        <state-number>490975</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <column id="57" parent="14" name="updated_at">
+        <state-number>490975</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <index id="58" parent="14" name="pivots_pkey">
+        <object-id>160178</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="59" parent="14" name="pivots_user_id_index">
+        <object-id>160195</object-id>
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="60" parent="14" name="pivots_subject_id_index">
+        <object-id>160196</object-id>
+        <columns>subject_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="61" parent="14" name="pivots_group_id_index">
+        <object-id>160197</object-id>
+        <columns>group_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="62" parent="14" name="pivots_pkey">
+        <columns>id</columns>
+        <underlying-index>pivots_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="63" parent="14" name="pivots_user_id_foreign">
+        <columns>user_id</columns>
+        <ref-key>~.users.users_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="64" parent="14" name="pivots_subject_id_foreign">
+        <columns>subject_id</columns>
+        <ref-key>~.subjects.subjects_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="65" parent="14" name="pivots_group_id_foreign">
+        <columns>group_id</columns>
+        <ref-key>~.groups.groups_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="66" parent="15" name="id">
+        <state-number>490956</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;roles_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="67" parent="15" name="name">
+        <state-number>490956</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <column id="68" parent="15" name="created_at">
+        <state-number>490956</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <column id="69" parent="15" name="updated_at">
+        <state-number>490956</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <index id="70" parent="15" name="roles_pkey">
+        <object-id>160104</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="71" parent="15" name="roles_pkey">
+        <columns>id</columns>
+        <underlying-index>roles_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="72" parent="16" name="id">
+        <state-number>490969</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;students_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="73" parent="16" name="student_code">
+        <state-number>490969</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="74" parent="16" name="name">
+        <state-number>490969</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="75" parent="16" name="lastname">
+        <state-number>490969</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="76" parent="16" name="group_code">
+        <state-number>490969</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="77" parent="16" name="created_at">
+        <state-number>490969</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <column id="78" parent="16" name="updated_at">
+        <state-number>490969</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <index id="79" parent="16" name="students_pkey">
+        <object-id>160152</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="80" parent="16" name="students_student_code_unique">
+        <object-id>160159</object-id>
+        <columns>student_code</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="81" parent="16" name="students_pkey">
+        <columns>id</columns>
+        <underlying-index>students_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <key id="82" parent="16" name="students_student_code_unique">
+        <columns>student_code</columns>
+        <underlying-index>students_student_code_unique</underlying-index>
+      </key>
+      <foreign-key id="83" parent="16" name="students_group_code_foreign">
+        <columns>group_code</columns>
+        <ref-key>~.groups.groups_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="84" parent="17" name="id">
+        <state-number>490973</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;subjects_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="85" parent="17" name="name">
+        <state-number>490973</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="86" parent="17" name="subject_code">
+        <state-number>490973</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="87" parent="17" name="semester">
+        <state-number>490973</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)</data-type>
+      </column>
+      <column id="88" parent="17" name="language">
+        <state-number>490973</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="89" parent="17" name="created_at">
+        <state-number>490973</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <column id="90" parent="17" name="updated_at">
+        <state-number>490973</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <index id="91" parent="17" name="subjects_pkey">
+        <object-id>160170</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="92" parent="17" name="subjects_pkey">
+        <columns>id</columns>
+        <underlying-index>subjects_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="93" parent="18" name="id">
+        <state-number>490961</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;users_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="94" parent="18" name="name">
+        <state-number>490961</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="95" parent="18" name="email">
+        <state-number>490961</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="96" parent="18" name="role_id">
+        <state-number>490961</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>1</default-expression>
+      </column>
+      <column id="97" parent="18" name="password">
+        <state-number>490961</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <column id="98" parent="18" name="remember_token">
+        <state-number>490961</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="99" parent="18" name="created_at">
+        <state-number>490961</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <column id="100" parent="18" name="updated_at">
+        <state-number>490961</state-number>
+        <data-type>timestamp(0)</data-type>
+      </column>
+      <index id="101" parent="18" name="users_pkey">
+        <object-id>160126</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="102" parent="18" name="users_email_unique">
+        <object-id>160133</object-id>
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="103" parent="18" name="users_pkey">
+        <columns>id</columns>
+        <underlying-index>users_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <key id="104" parent="18" name="users_email_unique">
+        <columns>email</columns>
+        <underlying-index>users_email_unique</underlying-index>
+      </key>
+      <foreign-key id="105" parent="18" name="users_role_id_foreign">
+        <columns>role_id</columns>
+        <ref-key>~.roles.roles_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+  <data-source name="MySQL - repos@localhost" uuid="70901fb2-0fbb-494d-9789-f697d44c3287">
+    <database-info product="MySQL" version="5.5.45" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="repos"/>
+    </database-model>
+  </data-source>
+</component>

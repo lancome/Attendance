@@ -1,0 +1,11 @@
+@extends('layouts.app')
+@section('content')
+    <h1>{{$student->name}}</h1>
+    <hr>
+    <h1>{{$student->lastname}}</h1>
+    <hr>
+    <h1>{{$student->student_code}}</h1>
+    <hr>
+    <h1>{{$student->group->code}}</h1>
+    <hr>
+@stop
