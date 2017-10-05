@@ -1,4 +1,4 @@
-## Attendance with Laravel
+# Attendance with Laravel
 
 ## Official Documentation
 
