@@ -6,10 +6,10 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 ## Installation commands
 
-.env add your db
-php artisan cache:clear
-php artisan migrate --seed
-php artisan key:generate
+- .env add your db
+- php artisan cache:clear
+- php artisan migrate --seed
+- php artisan key:generate
 
 ### License
 
